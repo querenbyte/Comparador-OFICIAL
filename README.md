@@ -10,8 +10,8 @@ Este projeto é um site web criado com HTML, CSS e JavaScript, focado em apresen
 - CSS3
 - JavaScript
 
-## 🌐 Acesse o site
+## Acesse o site aqui
 
-👉 https://SEU-USUARIO.github.io/NOME-DO-REPO/
+👉 https://querenbyte.github.io/Comparador-OFICIAL/comparar.html
 
 ## 📂 Estrutura
