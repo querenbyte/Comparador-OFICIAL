@@ -14,4 +14,7 @@ Este projeto é um site web criado com HTML, CSS e JavaScript, focado em apresen
 
 👉 https://querenbyte.github.io/Comparador-OFICIAL/comparar.html
 
-## 📂 Estrutura
+## Uma Preview
+
+![Preview do site](image.png)
+
