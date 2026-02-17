@@ -1,0 +1,202 @@
+/* ============================================================
+   RESET / BASE
+============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita rolagem lateral */
+}
+
+/* ============================================================
+   LAYOUT PRINCIPAL (HERO SECTION)
+============================================================ */
+.hero-section {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 40px; /* Espaço entre texto e formulário */
+}
+
+/* --- LADO VISUAL (ESQUERDA) --- */
+.lado-visual {
+    flex: 1; /* Ocupa metade */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinha texto à esquerda */
+    padding-left: 40px;
+}
+
+header h1 {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 3.5rem; /* Fonte Gigante */
+    color: #fff;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
+header .subtitulo {
+    font-size: 1.2rem;
+    color: #ccc;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    object-fit: contain;
+    /* Efeito legal: faz a imagem parecer sair de baixo */
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* --- LADO FORMULÁRIO (DIREITA) --- */
+.lado-form {
+    flex: 1; /* Ocupa a outra metade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seletor-container {
+    width: 100%;
+    max-width: 480px;
+    background: #111;
+    padding: 35px;
+    border-radius: 26px;
+    border: 1px solid #222;
+    box-shadow: 0 20px 60px rgba(198,147,58,0.1); 
+}
+
+/* ============================================================
+   ESTILOS DO FORMULÁRIO
+============================================================ */
+.bloco-smartphone + .bloco-smartphone {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #333;
+}
+
+.bloco-smartphone h2 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #c6933a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.campo { margin-bottom: 15px; position: relative; }
+.campo label { display: none; } 
+
+.campo select, .campo input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #222;
+    border: 1px solid #333;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    transition: 0.3s;
+}
+
+.campo select:focus, .campo input[type="text"]:focus {
+    border-color: #c6933a;
+    background: #2a2a2a;
+}
+
+/* Botão */
+.botao {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    background-color: #c6933a;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 5px 20px rgba(198,147,58,0.25);
+}
+.botao:hover { background-color: #d4a44a; transform: translateY(-2px); }
+
+/* Status */
+.status {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* Lista Resultados */
+.lista-resultados {
+    position: absolute; width: 100%; z-index: 50;
+    background: #1a1a1a; border: 1px solid #333; border-radius: 12px;
+    max-height: 200px; overflow-y: auto; padding: 5px; display: none;
+    margin-top: 5px;
+}
+.item-resultado { display: flex; align-items: center; padding: 10px; cursor: pointer; transition: 0.2s; border-bottom: 1px solid #222; }
+.item-resultado:hover { background: #333; }
+.item-thumb { width: 60px; height: 60px; background: #fff; border-radius: 6px; display:flex; align-items:center; justify-content:center; margin-right: 10px; }
+.item-thumb img { width: 90%; height: auto; object-fit: contain; }
+
+/* ============================================================
+   RESPONSIVO (MOBILE) - O AJUSTE FINO
+============================================================ */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column; 
+        
+        /* Reduzi o padding do topo para subir tudo */
+        padding: 20px 20px; 
+        gap: 20px;
+    }
+
+    .lado-visual {
+        align-items: center; 
+        text-align: center;
+        padding-left: 0;
+        width: 100%;
+    }
+    
+    header h1 { 
+        font-size: 1.8rem; 
+        line-height: 1.1;  
+        margin-bottom: 5px;
+    }
+    
+    header .subtitulo {
+        font-size: 0.8rem;
+        margin-bottom: 15px; /* Reduzi margem para juntar mais */
+    }
+    
+    .lado-form { width: 100%; }
+    
+    /* AQUI ESTÁ A MUDANÇA PRINCIPAL PARA O MOBILE: */
+    .hero-img {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+        /* Deixei bem menor (150px) para caber o formulário na tela inicial */
+        max-width: 150px; 
+    }
+}

@@ -1,0 +1,432 @@
+/* ============================================================
+   RESET & VARIÁVEIS VISUAIS
+============================================================ */
+:root {
+    --bg-body: #121212;         
+    --bg-topo: #1a1a1a;         
+    --gold-gradient: linear-gradient(135deg, #bfa15f, #e6c885); 
+    --gold-solid: #c6933a;
+    --text-on-gold: #2e240e;    
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+    background-color: var(--bg-body);
+    color: #e0e0e0;
+}
+
+/* ============================================================
+   DESKTOP TOPO
+============================================================ */
+.topo-comparativo {
+    width: 90%;           
+    max-width: 850px;     
+    margin: 40px auto;    
+    height: 280px;        
+    border-radius: 30px; 
+    background: radial-gradient(circle at center, rgba(180, 145, 80, 0.3) 0%, rgba(18, 18, 18, 1) 65%);
+    border: 1px solid #333; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nome-topo {
+    position: absolute; top: 25px; left: 50%; transform: translateX(-50%);
+    width: 100%; text-align: center; font-size: 1.8rem; font-weight: 700;
+    color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    z-index: 20; padding: 0 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+}
+
+.topo-comparativo .lado { width: 50%; height: 100%; position: relative; overflow: hidden; }
+
+.topo-comparativo .lado img {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -13%); 
+    width: auto; height: 180%; max-width: 300px;  
+    object-fit: cover; object-position: center bottom;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.05));
+}
+
+.topo-comparativo .vs {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    font-size: 48px; font-weight: 900;
+    background: linear-gradient(to bottom, #fff, #777);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    z-index: 10; pointer-events: none;
+}
+
+/* ============================================================
+   CARDS DE PREÇO (DESKTOP)
+============================================================ */
+.cards-preco {
+    width: 50%; max-width: 600px; margin: -50px auto 40px auto; 
+    display: flex; justify-content: center; gap: 200px; 
+    position: relative; z-index: 30;
+}
+
+.card-preco {
+    position: relative; overflow: visible; background: var(--gold-gradient);
+    border: 1px solid #fff2cc; padding: 12px 8px; color: var(--text-on-gold); 
+    text-align: center; font-family: 'Alfa Slab One', cursive;
+    border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    max-width: 190px; width: 100%;      
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    min-height: 110px; 
+}
+
+.preco-valor { font-size: 1.5rem; line-height: 1; }
+
+.card-preco::before {
+    content: ""; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    border-left: 20px solid transparent; border-right: 20px solid transparent; 
+    border-bottom: 15px solid #bfa15f; z-index: 31;
+}
+
+.card-preco:hover { transform: translateY(-5px); filter: brightness(1.1); box-shadow: 0 15px 30px rgba(191, 161, 95, 0.3); }
+.card-preco:active { transform: scale(0.95) !important; }
+
+.card-label {
+    font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;
+    color: #4a3b18; margin-bottom: 5px; font-family: -apple-system, sans-serif; font-weight: 800;
+}
+
+.preco-wrapper {
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    margin-bottom: 10px; background: rgba(255,255,255,0.2); 
+    padding: 5px 10px; border-radius: 8px; width: 100%;
+}
+.preco-sifrao { font-size: 1.2rem; color: var(--text-on-gold); }
+.preco-valor { font-size: 1.8rem; line-height: 1; }
+
+.btn-veja {
+    font-family: 'Alfa Slab One', cursive; font-size: 0.9rem;
+    background: #2e240e; color: #fff; padding: 8px 20px;
+    border-radius: 6px; margin-top: 5px; text-transform: uppercase; transition: 0.3s;
+}
+
+/* ============================================================
+   TABELA (ESTRUTURA GERAL)
+============================================================ */
+.tabela-bloco {
+    width: 90%; max-width: 850px; margin: 0 auto 80px auto;
+    border-radius: 25px; background: transparent; 
+}
+
+.tabela-comparativa-real {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    background: #fff; box-shadow: 0 0 40px rgba(0,0,0,0.5); border-radius: 25px;
+}
+
+/* HEADER DA TABELA */
+.tabela-comparativa-real thead th {
+    background-color: #f0f0f0; color: #111; text-align: center;
+    font-size: 1.1rem; padding: 25px 10px; font-weight: 800; 
+    border-bottom: 2px solid #c6933a; font-family: 'Roboto', sans-serif;
+    position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+.tabela-comparativa-real thead th:first-child { border-top-left-radius: 25px; }
+.tabela-comparativa-real thead th:last-child { border-top-right-radius: 25px; }
+
+/* LINHAS E CÉLULAS */
+.tabela-comparativa-real tbody tr:nth-child(even) td { background-color: #f9f9f9; }
+.tabela-comparativa-real tbody tr:nth-child(odd) td { background-color: #fff; }
+.tabela-comparativa-real tbody tr:hover td { background-color: #fff8e1; transition: background 0.2s; }
+
+.tabela-comparativa-real td {
+    padding: 18px 14px; font-size: 1rem; border-bottom: 1px solid #eee;
+    text-align: center; color: #333;
+}
+
+.tabela-comparativa-real td:first-child {
+    font-weight: 700; text-align: left; color: #111;
+    width: 260px; padding-left: 30px; font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.tabela-comparativa-real tbody tr:last-child td:first-child { border-bottom-left-radius: 25px; }
+.tabela-comparativa-real tbody tr:last-child td:last-child { border-bottom-right-radius: 25px; }
+.tabela-comparativa-real tbody tr:last-child td { border-bottom: none; }
+
+@media (min-width: 701px) {
+    .tabela-comparativa-real td:nth-child(2),
+    .tabela-comparativa-real th:nth-child(2),
+    .tabela-comparativa-real td:nth-child(3),
+    .tabela-comparativa-real th:nth-child(3) { border-left: 1px solid #eee; }
+}
+
+/* ============================================================
+   TÍTULOS DAS SEÇÕES (GLOBAL / DESKTOP)
+============================================================ */
+tr.linha-titulo-secao td {
+    background-color: #C9C9C9 !important; 
+    color: #000 !important; 
+    font-family: 'Roboto', -apple-system, sans-serif !important;
+    font-weight: 900 !important; 
+    font-size: 1.25rem !important; /* Tamanho Desktop */
+    text-transform: uppercase; letter-spacing: 1.5px; text-align: center;
+    padding: 20px 10px !important; 
+    border-top: 1px solid #dcdcdc !important; pointer-events: none; 
+}
+
+/* ============================================================
+   ========================= MOBILE ===========================
+============================================================ */
+@media (max-width: 700px) {
+
+    .topo-comparativo {
+        width: 94%; height: 138px; padding: 0; margin: 20px auto; 
+        border-radius: 20px;
+        background: radial-gradient(circle at center, rgba(180, 145, 80, 0.35) 0%, rgba(18, 18, 18, 1) 80%);
+        display: flex; justify-content: space-between; align-items: center; border: 1px solid #333; 
+    }
+    
+    .nome-topo {
+        top: -8px; font-size: 1rem; white-space: normal; text-overflow: clip; 
+        padding: 0 5px; line-height: 1.1; width: 100%;      
+        display: flex; justify-content: center; align-items: center; height: 60px;
+    }
+
+    .topo-comparativo .lado img {
+        position: absolute; top: 60%; left: 50%; transform: translate(-50%, -20%);
+        width: 140%; max-width: 200px; height: auto; z-index: 5; 
+    }
+
+    .topo-comparativo .vs { font-size: 24px; top: 55%; }
+
+    /* --- CARDS PREÇO MOBILE --- */
+    .cards-preco { 
+        width: 94%; 
+        /* 👇👇👇 AQUI EU AUMENTO O ESPAÇAMENTO ENTRE OS CARDS 👇👇👇 */
+        gap: 60px; 
+        
+        margin-top: -25px; 
+    }
+
+    .card-preco {
+        padding: 6px 2px; min-height: 80px; width: 100%;
+        max-width: 100%; border-radius: 8px;
+    }
+    .card-preco::before { top: -8px; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid #bfa15f; }
+    .card-label { font-size: 0.5rem; margin-bottom: 2px; }
+    .preco-wrapper { margin-bottom: 3px; gap: 2px; padding: 2px; background: rgba(255,255,255,0.15); }
+    .preco-sifrao { font-size: 0.6rem; }
+    .preco-valor { font-size: 0.9rem; }
+    .btn-veja { font-size: 0.55rem; padding: 4px 6px; margin-top: 2px; }
+
+    /* ============================================================
+       TABELA COMPLETA NA TELA (FIT SCREEN)
+    ============================================================ */
+    .tabela-bloco {
+        width: 100%; margin-bottom: 40px; border-radius: 0; background: transparent;
+        overflow: visible; /* Permite sticky header */
+        display: block;
+    }
+    
+    .tabela-comparativa-real {
+        border-radius: 0; 
+        width: 100%; 
+        /* MÁGICA: Fixa a tabela na largura da tela, forçando quebra de linha */
+        table-layout: fixed; 
+        box-shadow: none;
+    }
+
+    .tabela-comparativa-real thead th {
+        font-size: 0.75rem; padding: 10px 2px; background-color: #f5f5f5;
+        border-radius: 0 !important;
+        white-space: normal; vertical-align: middle;
+    }
+
+    /* Mais espaço nas células e quebra de palavra */
+    .tabela-comparativa-real td {
+        padding: 10px 4px; /* Espaço interno */
+        font-size: 0.7rem; /* Fonte ajustada para caber */
+        word-wrap: break-word; /* Quebra palavras longas */
+        hyphens: auto;
+        line-height: 1.3;
+    }
+    
+    /* Primeira coluna (Rótulos) */
+    .tabela-comparativa-real td:first-child {
+        width: 80px !important; /* Largura fixa pequena para sobrar espaço pros dados */
+        font-size: 0.65rem;
+        background-color: #eaeaea !important; 
+        color: #000;
+        border-radius: 0 !important;
+        padding-left: 8px;
+        text-align: left;
+    }
+
+    /* Títulos de Seção */
+    tr.linha-titulo-secao td {
+        background-color: #C9C9C9 !important; 
+        color: #000 !important;
+        font-size: 0.8rem !important;
+        text-align: left !important; 
+        padding-left: 15px !important; 
+    }
+
+    .info-gatilho { display: none !important; }
+}
+
+/* ============================================================
+   UTILITÁRIOS
+============================================================ */
+.card-preco-link, .card-preco-link:focus { outline: none !important; border: none !important; text-decoration: none !important; }
+
+.termo-glossario {
+    cursor: help; position: relative; border-bottom: 1px dashed var(--gold-solid, #c6933a);
+    color: inherit; text-decoration: none; transition: all 0.2s ease; padding-bottom: 1px;
+}
+.termo-glossario:hover {
+    background-color: rgba(198, 147, 58, 0.15); border-bottom: 1px solid var(--gold-solid, #c6933a); 
+    color: #000; border-radius: 4px; padding: 2px 4px; margin: 0 -4px;   
+}
+
+/* SHEET/MODAL */
+.sheet-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); 
+    z-index: 9999; opacity: 0; visibility: hidden; transition: opacity 0.3s ease;
+    display: flex; justify-content: center; align-items: center;
+}
+.sheet-overlay.ativo { opacity: 1; visibility: visible; }
+.sheet-content {
+    background: #fff; width: 90%; max-width: 500px; padding: 30px; border-radius: 20px;
+    position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.sheet-overlay.ativo .sheet-content { transform: scale(1); }
+.sheet-close {
+    position: absolute; top: 15px; right: 15px; background: #f0f0f0; border: none; font-size: 20px;
+    width: 32px; height: 32px; border-radius: 50%; cursor: pointer; color: #555;
+    display: flex; align-items: center; justify-content: center; line-height: 1; transition: 0.2s;
+}
+.sheet-close:hover { background: #e0e0e0; color: #000; }
+.sheet-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+.sheet-header h3 { font-size: 1.4rem; color: #000; font-weight: 700; font-family: 'Alfa Slab One', cursive; }
+.sheet-body p { font-size: 1.05rem; line-height: 1.6; color: #444; }
+
+@media (max-width: 700px) {
+    .sheet-overlay { align-items: flex-end; }
+    .sheet-content {
+        width: 100%; max-width: 100%; border-radius: 24px 24px 0 0; padding: 25px 25px 40px 25px;
+        transform: translateY(100%); transition: transform 0.3s ease-out;
+    }
+    .sheet-overlay.ativo .sheet-content { transform: translateY(0); }
+}
+
+/* ============================================================
+   CTA FINAL (RODAPÉ DA TABELA)
+============================================================ */
+.cta-final-container {
+    max-width: 850px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.titulo-final {
+    color: #fff;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.cards-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* O Botão Grande Final */
+.btn-final {
+    flex: 1;
+    background: #1a1a1a; /* Fundo escuro */
+    border: 2px solid var(--gold-solid, #c6933a); /* Borda Dourada */
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.btn-final:hover {
+    background: var(--gold-solid, #c6933a); /* Fica todo dourado no hover */
+    transform: translateY(-5px);
+}
+
+/* Nome do Celular no botão */
+.nome-final {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Texto "VER OFERTA" */
+.ver-oferta {
+    color: var(--gold-solid, #c6933a); /* Texto dourado */
+    font-family: 'Alfa Slab One', cursive;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    background: rgba(255,255,255,0.05);
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Hover: Inverte as cores para dar impacto */
+.btn-final:hover .nome-final { color: #000; }
+.btn-final:hover .ver-oferta { 
+    color: #fff; 
+    background: #000;
+}
+
+.separador-final {
+    color: #555;
+    font-weight: bold;
+    font-family: 'Alfa Slab One', cursive;
+    text-transform: uppercase;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .cards-final {
+        flex-direction: column; /* Um embaixo do outro */
+        gap: 15px;
+    }
+    
+    .btn-final {
+        width: 100%; /* Ocupa a largura toda */
+        flex-direction: row; /* Nome na esquerda, botão na direita */
+        justify-content: space-between;
+        padding: 15px;
+    }
+    
+    .nome-final {
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        text-align: left;
+        max-width: 50%;
+    }
+    
+    .ver-oferta {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .separador-final { display: none; } /* Esconde o "OU" no mobile */
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Smartphones • Singularibyte</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/seletor.css">
+</head>
+
+<body>
+
+    <main class="hero-section">
+        
+        <div class="lado-visual">
+            <header>
+                <h1>COMPARE<br>SMARTPHONES</h1>
+                <p class="subtitulo">Escolha dois modelos para ver o duelo.</p>
+            </header>
+            
+            <img src="img/comparador/hero-phones.webp" alt="Comparativo de Celulares" class="hero-img">
+        </div>
+
+        <div class="lado-form">
+            <div class="seletor-container">
+
+                <section class="bloco-smartphone">
+                    <h2>PRIMEIRO SMARTPHONE</h2>
+                    
+                    <div class="campo">
+                        <label>Selecione a marca</label>
+                        <select id="brandA">
+                            <option value="">Selecione a marca...</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label>Pesquise o modelo</label>
+                        <input type="text" 
+                               id="searchA" 
+                               placeholder="Selecione uma marca primeiro" 
+                               autocomplete="off" 
+                               disabled>
+                        
+                        <div class="lista-resultados" id="listaA"></div>
+                    </div>
+                </section>
+
+                <section class="bloco-smartphone">
+                    <h2>SEGUNDO SMARTPHONE</h2>
+
+                    <div class="campo">
+                        <label>Selecione a marca</label>
+                        <select id="brandB">
+                            <option value="">Selecione a marca...</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label>Pesquise o modelo</label>
+                        <input type="text" 
+                               id="searchB" 
+                               placeholder="Selecione uma marca primeiro" 
+                               autocomplete="off" 
+                               disabled>
+
+                        <div class="lista-resultados" id="listaB"></div>
+                    </div>
+                </section>
+
+                <button id="btnComparar" class="botao">COMPARAR AGORA</button>
+
+                <p id="statusSelecionados" class="status"></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Singularibyte — Tecnologia com propósito.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparativo de Smartphones • Singularibyte</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/comparativo.css">
+</head>
+
+<body>
+
+    <section class="topo-comparativo">
+        <div class="lado">
+            <h2 id="nomeTopA" class="nome-topo"></h2> 
+            <img id="imgTopA" src="" alt="Smartphone A">
+        </div>
+
+        <div class="vs">VS</div>
+
+        <div class="lado">
+            <h2 id="nomeTopB" class="nome-topo"></h2>
+            <img id="imgTopB" src="" alt="Smartphone B">
+        </div>
+    </section>
+
+    <section class="cards-preco">
+        <a id="cardA-link" class="card-preco-link" href="#" target="_blank" rel="nofollow noopener">
+            <article class="card-preco" id="cardA">
+                <span class="card-label">MELHOR PREÇO</span>
+                <div class="preco-wrapper">
+                    <span class="preco-sifrao">R$:</span>
+                    <span class="preco-valor" id="cardA-preco">—</span>
+                </div>
+                <div class="btn-veja">VEJA AQUI</div>
+            </article>
+        </a>
+
+        <a id="cardB-link" class="card-preco-link" href="#" target="_blank" rel="nofollow noopener">
+            <article class="card-preco" id="cardB">
+                <span class="card-label">MELHOR PREÇO</span>
+                <div class="preco-wrapper">
+                    <span class="preco-sifrao">R$:</span>
+                    <span class="preco-valor" id="cardB-preco">—</span>
+                </div>
+                <div class="btn-veja">VEJA AQUI</div>
+            </article>
+        </a>
+    </section>
+
+    <section class="tabela-bloco">
+        <table class="tabela-comparativa-real">
+            <thead>
+                <tr>
+                    <th class="col-titulo">
+                        <span>Especificações</span><br>
+                        <span>Técnicas</span>
+                    </th>
+                    <th id="tituloA"></th>
+                    <th id="tituloB"></th>
+                </tr>
+            </thead>
+            <tbody id="linhas-especificacoes">
+                </tbody>
+        </table>
+    </section>
+
+    <div id="sheet-overlay" class="sheet-overlay">
+        <div class="sheet-content">
+            <button class="sheet-close" onclick="fecharSheet()">&times;</button>
+            
+            <div class="sheet-header">
+                <span class="sheet-icon">💡</span>
+                <h3 id="sheet-titulo">Título aqui</h3>
+            </div>
+            
+            <div class="sheet-body">
+                <p id="sheet-texto">A explicação aparecerá aqui...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/glossario.js"></script> 
+    
+    <script src="js/comparar.js"></script>
+    
+    <script src="js/comparativo.js"></script>
+
+    <section class="cta-final-container">
+        <h3 class="titulo-final">Decidiu qual levar?</h3>
+        
+        <div class="cards-final">
+            <a id="btnFinalA" href="#" target="_blank" rel="nofollow noopener" class="btn-final">
+                <span class="nome-final" id="nomeFinalA">Smartphone A</span>
+                <span class="ver-oferta">VER OFERTA <span class="arrow">➜</span></span>
+            </a>
+
+            <div class="separador-final">ou</div>
+
+            <a id="btnFinalB" href="#" target="_blank" rel="nofollow noopener" class="btn-final">
+                <span class="nome-final" id="nomeFinalB">Smartphone B</span>
+                <span class="ver-oferta">VER OFERTA <span class="arrow">➜</span></span>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
